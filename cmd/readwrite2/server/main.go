@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"go-unix-domain-socket-example/pkg/message"
 	"io"
 	"log"
 	"net"
 	"os"
 	"os/signal"
 	"strings"
+
+	"github.com/devlights/go-unix-domain-socket-example/pkg/message"
 )
 
 const (
