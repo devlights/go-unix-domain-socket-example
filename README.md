@@ -3,6 +3,18 @@ Unix domain socket (UDS) example by golang
 
 ## How to Run
 
+### Using [go-task](https://taskfile.dev/)
+
+```sh
+$ task --list
+* run-basic:            run basic example
+* run-readwrite:        run readwrite example
+* run-readwrite2:       run readwrite2 example
+* run-usinggob:         run usinggob example
+
+$ task [run-basic|run-readwrite|run-readwrite2|run-usinggob]
+```
+
 ### basic
 
 Open two terminals. the one is following:
