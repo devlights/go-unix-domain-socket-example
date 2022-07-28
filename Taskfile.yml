@@ -1,0 +1,67 @@
+version: '3'
+
+tasks:
+  run-basic:
+    desc: run basic example
+    cmds:
+      - task: basic-server
+      - sleep 2
+      - task: basic-client
+      - rm -f /tmp/echo.sock
+  run-readwrite:
+    desc: run readwrite example
+    cmds:
+      - task: readwrite-server
+      - sleep 2
+      - task: readwrite-client
+      - rm -f /tmp/echo.sock
+  run-readwrite2:
+    desc: run readwrite2 example
+    cmds:
+      - task: readwrite2-server
+      - sleep 2
+      - task: readwrite2-client
+      - rm -f /tmp/echo.sock
+  run-usinggob:
+    desc: run usinggob example
+    cmds:
+      - task: usinggob-server
+      - sleep 2
+      - task: usinggob-client
+      - rm -f /tmp/echo.sock
+  basic-server:
+    dir: cmd/basic/server
+    cmds:
+      - go run . &
+  basic-client:
+    dir: cmd/basic/client
+    cmds:
+      - go run .
+      - pkill server
+  readwrite-server:
+    dir: cmd/readwrite/server
+    cmds:
+      - go run . &
+  readwrite-client:
+    dir: cmd/readwrite/client
+    cmds:
+      - go run .
+      - pkill server
+  readwrite2-server:
+    dir: cmd/readwrite2/server
+    cmds:
+      - go run . &
+  readwrite2-client:
+    dir: cmd/readwrite2/client
+    cmds:
+      - go run .
+      - pkill server
+  usinggob-server:
+    dir: cmd/usinggob/server
+    cmds:
+      - go run . &
+  usinggob-client:
+    dir: cmd/usinggob/client
+    cmds:
+      - go run .
+      - pkill server
