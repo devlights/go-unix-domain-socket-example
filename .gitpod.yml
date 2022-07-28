@@ -1,0 +1,13 @@
+image: gitpod/workspace-go:latest
+
+tasks:
+  - name: install staticcheck
+    init: go install honnef.co/go/tools/cmd/staticcheck@latest
+  - name: install go-task
+    init: go install github.com/go-task/task/v3/cmd/task@latest
+  - name: install goimport
+    init: go install golang.org/x/tools/cmd/goimports@latest
+
+vscode:
+  extensions:
+    - golang.go
